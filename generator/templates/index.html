@@ -1,0 +1,49 @@
+{% extends 'layouts/layout.html' %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+    {% block content %}
+    <div class="col-md-4 offset-md-4">
+        <form action="{% url 'password' %}" class="card card-body p-5" style="background-color: #121212">
+            <h1 class="h3 text-center mb-3">Password Generator</h1>
+            <label for="length">Select the length of your Password:</label>
+            <Select name="length" id="length" class="form-select mb-3">
+                <option value="6">6 Characters</option>
+                <option value="7">7 characters</option>
+                <option value="8">8 characters</option>
+                <option value="9">9 characters</option>
+                <option value="10">10 characters</option>
+                <option value="11">11 characters</option>
+                <option value="12">12 characters</option>
+                <option value="13">13 characters</option>
+                <option value="14">14 characters</option>
+            </select>
+        
+    
+            <div class="form-check form-switch">
+                <input type="checkbox" name="uppercase" id="uppercase" class="form-check-input">
+                <label for="uppercase">Uppercase</label>
+            </div>
+    
+            <div class="form-check form-switch">
+                <input type="checkbox" name="special" id="special" class="form-check-input">
+                <label for="special">Special characters</label>
+            </div>
+           
+            <div class="form-check form-switch mb-3">    
+                 <input type="checkbox" name="numbers" id="numbers" class="form-check-input">
+                 <label for="numbers">Numbers</label>
+            </div>
+    
+            <button type="submit" class="btn btn-outline-primary" id="btn">Generate password</button>
+           </form>
+     </div>   
+    {% endblock %}
+</body>
+</html>
